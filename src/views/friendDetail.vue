@@ -71,15 +71,15 @@ export default {
         isImage: true
       },
         {
-          url: 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+          url: 'https://fastly.jsdelivr.net/npm/@vant/assets@1.0.6/tree.jpeg',
           isImage: true
         },
         {
-          url: 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+          url: 'https://fastly.jsdelivr.net/npm/@vant/assets@1.0.6/ipad.jpeg',
           isImage: true
         },
         {
-          url: 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+          url: 'https://fastly.jsdelivr.net/npm/@vant/assets@1.0.6/leaf.jpeg',
           isImage: true
         }
       ],
