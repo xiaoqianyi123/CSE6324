@@ -4,6 +4,22 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import swiper from 'swiper'
+import Vant from 'vant';
+import 'vant/lib/index.css';
+import { Form, Field, Button, List, Icon, Toast, CellGroup, Dialog} from "vant"; // 按需引入,优化加载速度
+import { Image as VanImage } from 'vant';
+import { Uploader } from 'vant';
+
+Vue.use(Dialog)
+Vue.use(CellGroup)
+Vue.use(Uploader)
+Vue.use(VanImage);
+Vue.use(Form);
+Vue.use(Field);
+Vue.use(Button);
+Vue.use(List);
+Vue.use(Icon);
+Vue.use(Toast);
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios

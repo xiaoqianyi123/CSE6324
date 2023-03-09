@@ -11,6 +11,18 @@ const routes = [{
     path: '/friendDetail',
     component: () => import('@/views/friendDetail')
   },
+  {
+    path: '/relativeDetail',
+    component: () => import('@/views/friendDetail')
+  },
+  {
+    path: '/addRelative',
+    component: () => import('@/views/addRelative')
+  },
+  {
+    path: '/addFriend',
+    component: () => import('@/views/addFriend')
+  },
 {
   path: '/explore',
   component: () => import('@/views/Explore')
