@@ -11,15 +11,15 @@
   <div class="record-title">
     Text
   </div>
-  <div class="record-text" v-for="(item,index) in [1,2,3]" :key="item">
-    Once upon a time there was an old mother pig who had three little pigs and not enough food to feed them. So when they were old enough, she sent them out into the world to seek their fortunes.
-    <div style="text-align: right">2022/01/21</div>
+  <div class="record-text" v-for="(item,index) in testList" >
+    {{item.text}}
+    <div style="text-align: right">{{item.time}}</div>
   </div>
-  <div class="record-text">
+  <div class="record-text" v-if="status == 2">
     <van-field  v-model="text"  type="textarea" style="background: #EB7347;font-size: 1.2rem; font-family: Lucida Grande" />
   </div>
   <van-button type="primary" block color="#EB7347" class="record-text" style="margin-top: 10px;border-radius: 5px;padding: 0px" @click="addText">
-    add text
+    {{addStatus}}
   </van-button>
 
   <div class="record-title">picture</div>
@@ -48,6 +48,22 @@ export default {
   name: "friendDetail",
   data () {
     return {
+      addStatus: 'add text',
+      testList:[
+        {
+          text: 'Once upon a time there was an old mother pig who had three little pigs and not enough food to feed them. So when they were old enough, she sent them out into the world to seek their fortunes.\n',
+          time: '2022/01/21'
+        },
+        {
+          text: 'Once upon a time there was an old mother pig who had three little pigs and not enough food to feed them. So when they were old enough, she sent them out into the world to seek their fortunes.\n',
+          time: '2022/01/21'
+        },
+        {
+          text: 'Once upon a time there was an old mother pig who had three little pigs and not enough food to feed them. So when they were old enough, she sent them out into the world to seek their fortunes.\n',
+          time: '2022/01/21'
+        }
+      ],
+      status:1,
       text:'',
       show: false,
       imageList:[{
@@ -77,7 +93,20 @@ export default {
   },
   methods: {
     addText() {
-      this.show = true
+      if(this.status == 1) {
+        this.status = 2
+        this.addStatus = 'save'
+        return
+      }
+      if(this.status == 2) {
+        this.status = 1;
+        this.testList.push({
+          time:'2023/03/09',
+          text: this.text
+        })
+        this.text = ''
+        return
+      }
     }
   }
 
